@@ -28,5 +28,20 @@ Route::get('/categories',function(){
     ]);
 });
 
-Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/{slug}',[PostController::class, 'show']);
+Route::get('/posts', function(){
+    return view('posts', [
+        "title" => "Posts",
+        "posts" => Post::all()
+    ]);
+});
+
+
+
+
+Route::get('/posts/{slug}', function($slug){
+
+    return view('post',[
+        "title" => "Single Post",
+        "post" => Post::find($slug)
+    ]);
+});
