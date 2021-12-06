@@ -1,11 +1,14 @@
 @extends('layouts.main')
 
 @section('container')
-<article>
-<h2>{{ $post["title"] }}</h2>
-<h5>{{  $post["author"] }}</h5>
-<p>{{ $post["body"] }} </p>
-</article>
+
+<h2>{{ $post->title }}</h2>
+
+
+<p>By. Agung Gumelar <a href="/categories/{{ $post->category->slug }}">
+     {{ $post->category->name }}</a></p>
+
+{!!  $post->body !!}
 
 <a href = "/posts"> Back to Posts</a>
 </p>
