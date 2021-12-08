@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
             'slug' =>'drakor'
         ]);
 
-        Post::factory(20)->create();
+        Post::factory(18)->create();
 
 
 
