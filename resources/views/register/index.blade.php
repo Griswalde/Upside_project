@@ -24,7 +24,7 @@
             </div>
             <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Register</button>
           </form>
-          <small class="d-block text-center mt-3">Already Registered? <a href="/register">Login</a></small>
+          <small class="d-block text-center mt-3">Already Registered? <a href="/login">Login</a></small>
         </main>
     
     </div>
