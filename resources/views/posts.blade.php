@@ -40,8 +40,7 @@
                 class="text-decoration-none text-info">{{ $posts[0]->title }} </a></h3>
             <p>
                 <small class="text-muted">
-                By, <a href="/posts?author=/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}
-                </a>{{ $posts[0]->created_at->diffForHumans() }}
+                {{ $posts[0]->created_at->diffForHumans() }}
             </small>
         </p>
         </div>
@@ -55,8 +54,7 @@
                 class="text-decoration-none text-info">{{ $posts[1]->title }} </a></h3>
             <p>
                 <small class="text-muted">
-                By, <a href="/authors/{{ $posts[1]->author->username }}">{{ $posts[1]->author->name }}
-                </a>{{ $posts[1]->created_at->diffForHumans() }}
+                {{ $posts[1]->created_at->diffForHumans() }}
             </small>
         </p>
         </div>
@@ -70,8 +68,7 @@
                 class="text-decoration-none text-info">{{ $posts[2]->title }} </a></h3>
             <p>
                 <small class="text-muted">
-                By, <a href="/authors/{{ $posts[2]->author->username }}">{{ $posts[2]->author->name }}
-                </a>{{ $posts[2]->created_at->diffForHumans() }}
+                {{ $posts[2]->created_at->diffForHumans() }}
             </small>
         </p>
         </div>
@@ -105,7 +102,7 @@
                   <h5 class="card-title">{{ $post->title }}</h5>
                   <p>
                     <small class="text-muted">
-                    By, <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}
+                    By, <a href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}
                     </a> {{ $post->created_at->diffForHumans() }}
                 </small>
             </p>
