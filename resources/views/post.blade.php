@@ -3,9 +3,10 @@
 @section('container')
 
 
-<div class="container">
-     <div class="row justify-content-center mb-5">
-          <div class="col-md-8">
+
+
+
+
                <h1 class="mb-3">{{ $post->title }}</h1>
                <p>By. <a href="/posts?author={{ $post->author->username }}"
                     class="text-decoration-none">{{ $post->author->name }}</a>
@@ -20,10 +21,14 @@
           </article>
               <a href = "/posts" class="d-block mt-3"> Back to Posts</a>
               </p>
+
+
+              
           </div>
      </div>
+     
 </div>
-
+     
 
 
 
