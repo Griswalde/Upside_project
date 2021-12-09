@@ -17,8 +17,9 @@ use App\Http\Controllers\RegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function(){
-    return view('home',[
+
+Route::get('/', function () {
+    return view('home', [
         "title" => "home",
     ]);
 });
@@ -46,10 +47,10 @@ Route::get('/', function(){
 // });
 
 
-Route::get('/posts',[PostController::class, 'index']);
-Route::get('/posts/{post:slug}' ,  [PostController::class, 'show']);
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{post:slug}',  [PostController::class, 'show']);
 
-Route::get('/categories', function() {
+Route::get('/categories', function () {
     return view('categories', [
         'title' => 'Post Categories',
         'categories' => Category::all()
@@ -68,3 +69,4 @@ Route::get('/categories', function() {
 Route::get('/login', [LoginController::class, 'index']);
 
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
