@@ -2,10 +2,7 @@
 
 @section('container')
     <h1 class="mb-5">Post Categories</h1>    
-
-   
-        
-
+    @if ($categories->count())
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-3">
@@ -41,6 +38,8 @@
        
         </div>
     </div>
-    
+    @else 
+    <h1>Data Kosong</h1>
+    @endif
 
 @endsection
