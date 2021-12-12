@@ -12,7 +12,11 @@
             <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
-                <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span> Delete</button>
+                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                    @method('delete')
+                    @csrf
+                    <button class="btn btn-danger " onclick="return confirm ('are you sure?')"><span data-feather="x-circle"></span>Delete</button>
+                  </form>
               </form>
 
               @if($post->image)
