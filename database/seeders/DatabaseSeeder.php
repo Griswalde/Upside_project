@@ -17,8 +17,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
        
-     
-        User::factory(4)->create();
+        User::Create([
+            'name' => 'Agung Gumelar',
+            'username' => 'Agung158',
+            'email' => 'agunggumelar1580@gmail.com',
+            'password' => bcrypt('password')
+        ]);
+
+
+        User::factory(3)->create();
 
 
 
@@ -36,6 +43,10 @@ class DatabaseSeeder extends Seeder
             'name' =>'Drakor',
             'slug' =>'drakor'
         ]);
+
+
+
+       
 
         Post::factory(18)->create();
 
