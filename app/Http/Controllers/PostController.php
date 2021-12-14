@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -23,11 +24,13 @@ class PostController extends Controller
             $title = ' by ' . $author->name;
         }
 
-        return view('posts', [
-            "title" => "All Posts" . $title,
-            "active" => 'posts',
+        $categories = Category::withCount('posts')->get();
 
-            "posts" => Post::latest()->filter(request(['search', 'category','author']))
+        return view('posts', [
+            "title"      => "All Posts" . $title,
+            "active"     => 'posts',
+            "categories" => $categories,
+            "posts"      => Post::latest()->filter(request(['search', 'category','author']))
             ->paginate(9)->withQueryString()
             
         ]);
@@ -35,11 +38,22 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $posts = Post::where('id', '!=', $post->id)->get()->random(2);
         return view('post', [
             "title" => "Single Post",
             "active" => 'posts',
-            "post" => $post
+            "posts" => $posts,
+            "post" => $post,
         ]);
+    }
+
+    public function upcoming()
+    {
+        $response = Http::get('http://api.themoviedb.org/3/movie/upcoming?api_key=69f41d98f270bb6413ffef7a8ad029f9');
+
+        $movies = $response->json();
+        $title = 'Upcoming';
+        return view('upcoming', compact('title', 'movies'));
     }
 
 }

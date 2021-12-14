@@ -26,7 +26,7 @@
   <label for="slug" class="form-label">Slug</label>
   <input type="text" class="form-control
   @error('slug')
-   is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug',$post->slug) }}">>
+   is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug',$post->slug) }}">
    @error('slug')
     <div class="invalid-feedback">
       {{ $message }}
