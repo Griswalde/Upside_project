@@ -45,7 +45,7 @@
                                     @else
                                         <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}"
                                             class="img-fluid rounded-start"" alt=" {{ $post->category->name }}"
-                                            style="height: 200px;">
+                                            style="height: 200ppx;">
                                     @endif
                                 </div>
                                 <div class="col-md-8">
