@@ -30,19 +30,19 @@
                     <div class="col-md">
                         <h4>Another posts</h4>
                         <div class="row">
-                            @forelse ($posts as $item)
+                            @forelse ($posts as $post)
                                 <div class="mb-3">
                                     <div class=" card">
                                         @if ($post->image)
-                                            <img src="{{ asset('storage/' . $item->image) }}"
-                                                alt="{{ $item->category->name }}" class="img-fluid">
+                                            <img src="{{ asset('storage/' . $post->image) }}"
+                                                alt="{{ $post->category->name }}" class="img-fluid">
                                         @else
-                                            <img src="https://source.unsplash.com/500x400?{{ $item->category->name }}"
-                                                class="card-img-top" alt="{{ $item->category->name }}">
+                                            <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}"
+                                                class="card-img-top" alt="{{ $post->category->name }}">
                                         @endif
                                         <div class="card-body">
-                                            <h5 class="card-title">{{ $item->title }}</h5>
-                                            <a href="#" class="btn btn-primary">Read more</a>
+                                            <h5 class="card-title">{{ $post->title }}</h5>
+                                            <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read more</a>
                                         </div>
                                     </div>
                                 </div>
