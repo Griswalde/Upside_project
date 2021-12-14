@@ -12,7 +12,7 @@
   <label for="title" class="form-label">Title</label>
   <input type="text" class="form-control @error('title')
    is-invalid @enderror" id="title" 
-   name="title" required autofocus velue="{{ old('title') }}">
+   name="title" required autofocus value="{{ old('title') }}">
    @error('title')
     <div class="invalid-feedback">
       {{ $message }}
@@ -24,7 +24,7 @@
   <label for="slug" class="form-label">Slug</label>
   <input type="text" class="form-control
   @error('slug')
-   is-invalid @enderror" id="slug" name="slug" required velue="{{ old('title') }}">>
+   is-invalid @enderror" id="slug" name="slug" required value="{{ old('title') }}">
    @error('slug')
     <div class="invalid-feedback">
       {{ $message }}
