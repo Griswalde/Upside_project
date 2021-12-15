@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
 
        
 
-        Post::factory(18)->create();
+        Post::factory(5)->create();
 
 
 
